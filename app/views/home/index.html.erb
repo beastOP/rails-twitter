@@ -1,1 +1,79 @@
-<h1 class="text-5xl font-medium">Hello World</h1>
+<div class="min-h-full">
+  <nav>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img
+              class="h-8 w-8"
+              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+              alt="Your Company"
+            >
+          </div>
+        </div>
+        <div class="relative ml-3">
+          <div class="flex items-center gap-x-4">
+            <button
+              type="button"
+              class="
+                text-white bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700
+                hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-indigo-300
+                dark:focus:ring-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5
+                text-center
+              "
+            >
+              Write a tweet
+            </button>
+            <a
+              href="<%= profile_path %>"
+              class="
+                relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm
+                focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
+                focus:ring-offset-gray-800
+              "
+            >
+              <img
+                class="h-8 w-8 rounded-full bg-gray-100"
+                src="https://freesvg.org/img/abstract-user-flat-4.png"
+                alt=""
+              >
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <header class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div
+      class="
+        text-sm font-medium text-center text-gray-500 border-b border-gray-200
+      "
+    >
+      <ul class="flex justify-center flex-wrap -mb-px">
+        <li class="me-2">
+          <a
+            href="#"
+            class="
+              inline-block p-4 text-indigo-600 border-b-2 border-indigo-600 rounded-t-lg
+              active
+            "
+          >For you</a>
+        </li>
+        <li class="me-2">
+          <a
+            href="#"
+            class="
+              inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600
+              hover:border-gray-300
+            "
+            aria-current="page"
+          >Following</a>
+        </li>
+      </ul>
+    </div>
+
+  </header>
+</div>
