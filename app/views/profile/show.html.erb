@@ -19,7 +19,7 @@
       <div class="flex flex-1 w-full justify-end">
         <% unless current_user.blank? %>
           <a
-            href="<%= profile_edit_path %>"
+            href="<%= edit_profile_path %>"
             class="
               focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg
               text-sm px-2.5 py-1.5 text-center hover:bg-gray-200 flex items-center border
@@ -62,7 +62,11 @@
         <span class="text-gray-600">@omkarpatil</span>
       </div>
       <div class="my-2">
-        <p>Building a social media</p>
+        <% if current_user.bio %>
+          <p><%= current_user.bio %></p>
+        <% else %>
+          <p>No bio available</p>
+        <% end %>
       </div>
       <div class="space-x-2">
         <a href="#" class="text-gray-600 font-medium hover:underline text-sm">

@@ -9,10 +9,12 @@ Rails.application.routes.draw do
     confirmation: 'verification'
   }
 
+  resource :profile, only: %i[show edit update], controller: 'profile'
+
   # set root route
   root 'home#index'
-  get '/profile' => 'profile#index'
-  get '/profile/edit' => 'profile#edit'
+  # get '/profile' => 'profile#index'
+  # get '/profile/edit' => 'profile#edit'
 
   get 'up' => 'rails/health#show', as: :rails_health_check
 end

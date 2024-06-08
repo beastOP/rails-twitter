@@ -16,10 +16,20 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
+        <%= f.label :name, class: "block text-sm font-medium leading-6 text-gray-900" %>
+        <div class="mt-2">
+          <%= f.text_field :name,
+                       autofocus: true,
+                       autocomplete: "name",
+                       class:
+                         "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-1.5 px-2.5" %>
+        </div>
+      </div>
+
+      <div class="field">
         <%= f.label :email, class: "block text-sm font-medium leading-6 text-gray-900" %>
         <div class="mt-2">
           <%= f.email_field :email,
-                        autofocus: true,
                         autocomplete: "email",
                         class:
                           "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-1.5 px-2.5" %>
