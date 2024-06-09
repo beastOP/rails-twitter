@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
-import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
-lazyLoadControllersFrom("controllers", application)
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
+
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)
