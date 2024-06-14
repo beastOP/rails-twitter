@@ -3,8 +3,20 @@
 >
   <div class="border border-gray-100 rounded shadow-sm p-6 w-full max-w-md">
     <h1 class="font-medium text-xl mb-4">Update Profile</h1>
-    <%= form_for(@user, :html => {:class => 'space-y-6'}, url: profile_path, html: { method: :put }) do |f| %>
+    <%= form_for(@user, url: profile_path, html: { method: :put }) do |f| %>
       <div class="field space-y-2">
+        <%= f.label :username, class: "block text-sm font-medium leading-6 text-gray-900" %>
+        <%= f.text_field :username,
+                     class:
+                       "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-1.5 px-2.5" %>
+      </div>
+      <div class="field space-y-2 mt-4">
+        <%= f.label :name, class: "block text-sm font-medium leading-6 text-gray-900" %>
+        <%= f.text_field :name,
+                     class:
+                       "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-1.5 px-2.5" %>
+      </div>
+      <div class="field space-y-2 mt-4">
         <%= f.label :bio, class: "block text-sm font-medium leading-6 text-gray-900" %>
         <%= f.text_field :bio,
                      class:

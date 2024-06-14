@@ -2,7 +2,9 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!, only: [:edit]
   before_action :set_user, only: %i[edit update]
 
-  def show; end
+  def show
+    @user = (User.find(params[:id]) if params[:id])
+  end
 
   def edit; end
 
@@ -21,6 +23,6 @@ class ProfileController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:bio)
+    params.require(:user).permit(%i[name bio])
   end
 end
