@@ -7,23 +7,21 @@
             <img
               class="h-8 w-8"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
+              alt="Rails Twitter"
             >
           </div>
         </div>
         <div class="relative ml-3">
           <div class="flex items-center gap-x-4">
-            <button
-              type="button"
-              class="
-                text-white bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700
-                hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-indigo-300
-                dark:focus:ring-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5
-                text-center
+            <%= link_to "Write a tweet",
+            new_tweet_path,
+            class:
               "
-            >
-              Write a tweet
-            </button>
+                            text-white bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700
+                            hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-indigo-300
+                            dark:focus:ring-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5
+                            text-center
+                          " %>
             <a
               href="<%= profile_path(:id => current_user.id) %>"
               class="

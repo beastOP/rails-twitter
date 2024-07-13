@@ -4,6 +4,7 @@ class ProfileController < ApplicationController
 
   def show
     @user = (User.find(params[:id]) if params[:id])
+    @my_tweets = Tweet.where(user_id: params[:id]) if params[:id]
   end
 
   def edit; end

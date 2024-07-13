@@ -1,0 +1,20 @@
+<div
+  class="flex min-h-screen items-center justify-center px-6 py-12 pt-0 lg:px-8"
+>
+  <div class="border border-gray-100 rounded shadow-sm p-6 w-full max-w-md">
+    <h1 class="font-medium text-xl mb-4">New Tweet</h1>
+    <%= form_with(model: @tweet, url: tweet_path, html: { method: :post }) do |f| %>
+      <div class="field space-y-2">
+        <%= f.label :content, class: "block text-sm font-medium leading-6 text-gray-900" %>
+        <%= f.text_area :content,
+                    class:
+                      "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-1.5 px-2.5" %>
+      </div>
+      <div class="actions mt-4">
+        <%= f.submit "Tweet",
+                 class:
+                   "flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+      </div>
+    <% end %>
+  </div>
+</div>
