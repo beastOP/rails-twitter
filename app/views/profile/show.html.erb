@@ -69,16 +69,25 @@
             <% end %>
           <% end %>
           <% if current_user and current_user.email != @user.email %>
-            <button
-              class="
-                text-white bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700
-                hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-indigo-300
-                dark:focus:ring-indigo-800 font-medium rounded-lg text-sm px-5 py-1.5
-                text-center
-              "
-            >
-              Follow
-            </button>
+            <% if @following %>
+              <%= button_to "Unfollow",
+              follow_path,
+              method: :post,
+              params: {
+                id: params[:id],
+              },
+              class:
+                "text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-1.5 text-center" %>
+            <% else %>
+              <%= button_to "Follow",
+              follow_path,
+              method: :post,
+              params: {
+                id: params[:id],
+              },
+              class:
+                "text-white bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:focus:ring-indigo-800 font-medium rounded-lg text-sm px-5 py-1.5 text-center" %>
+            <% end %>
           <% end %>
           <% unless !current_user.blank? %>
             <%= link_to "Login to follow",
@@ -106,11 +115,11 @@
         </div>
         <div class="space-x-2">
           <a href="#" class="text-gray-600 font-medium hover:underline text-sm">
-            <span class="font-bold text-gray-900">312</span>
+            <span class="font-bold text-gray-900"><%= @user.followers_count %></span>
             Followers
           </a>
           <a href="#" class="text-gray-600 font-medium hover:underline text-sm">
-            <span class="font-bold text-gray-900">448</span>
+            <span class="font-bold text-gray-900"><%= @user.following_count %></span>
             Following
           </a>
         </div>

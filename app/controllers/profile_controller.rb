@@ -5,6 +5,12 @@ class ProfileController < ApplicationController
   def show
     @user = (User.find(params[:id]) if params[:id])
     @my_tweets = Tweet.where(user_id: params[:id]) if params[:id]
+
+    @following = if Follow.exists?(user_id: current_user.id, following_id: params[:id])
+                   true
+                 else
+                   false
+                 end
   end
 
   def edit; end

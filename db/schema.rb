@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_713_102_332) do
+ActiveRecord::Schema[7.1].define(version: 20_240_713_173_756) do
+  create_table 'follows', force: :cascade do |t|
+    t.integer 'user_id'
+    t.integer 'following_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['following_id'], name: 'index_follows_on_following_id'
+    t.index ['user_id'], name: 'index_follows_on_user_id'
+  end
+
   create_table 'tweets', force: :cascade do |t|
     t.integer 'user_id', null: false
     t.text 'content', null: false
@@ -34,7 +43,12 @@ ActiveRecord::Schema[7.1].define(version: 20_240_713_102_332) do
     t.string 'name'
     t.string 'bio'
     t.string 'username'
+    t.integer 'following_count', default: 0
+    t.integer 'followers_count', default: 0
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
+
+  add_foreign_key 'follows', 'users'
+  add_foreign_key 'follows', 'users', column: 'following_id'
 end
