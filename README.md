@@ -8,6 +8,6 @@ A twitter clone in Ruby on Rails.
 - [x] Edit user profile
 - [x] Create Tweets
 - [x] Following other users
-- [ ] Tweets of Following on Feed
+- [x] Tweets of Following on Feed
 - [ ] Suggested Tweets
 - [ ] Direct Message
