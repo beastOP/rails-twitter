@@ -55,7 +55,7 @@
                 root_path,
                 "text-indigo-600 border-b-2 border-indigo-600 rounded-t-lg",
                 "border-b-2 border-transparent rounded-t-lg hover:text-gray-600
-                                                      hover:border-gray-300",
+                                                                hover:border-gray-300",
               )
             } inline-block p-4" %>
         </li>
@@ -68,7 +68,7 @@
                 root_path(tab: "foryou"),
                 "text-indigo-600 border-b-2 border-indigo-600 rounded-t-lg",
                 "border-b-2 border-transparent rounded-t-lg hover:text-gray-600
-                                                      hover:border-gray-300",
+                                                                hover:border-gray-300",
               )
             } inline-block p-4" %>
         </li>
@@ -79,7 +79,7 @@
   <main>
     <% if active_link(root_path) %>
       <div class="mx-auto max-w-screen-sm px-4 sm:px-6 lg:px-8">
-        <ul class="divide-x border-b">
+        <ul class="divide-y border-b">
           <% @tweets.each do |tweet| %>
             <li class="flex py-4 gap-x-2 text-sm">
               <div class="flex-shrink-0">
